@@ -1,7 +1,7 @@
 # powershell
 golang powershell
 
-```
+``` go
 package main
 
 import (
