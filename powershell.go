@@ -35,7 +35,10 @@ func Execute(cmd string) (string, error) {
 		errText, _ := sjis_to_utf8(stderr.String())
 		return "", errors.New(errText)
 	}
-	return strings.Trim(string(out), "\r\n"), nil
+
+	// 末尾の改行削除
+	outText := string(out)
+	return outText[:len(outText)-2], nil
 }
 
 // ShiftJIS から UTF-8
